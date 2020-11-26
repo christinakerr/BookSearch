@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.save-btn{
+  clear: both;
+  margin-top: 10px;
+}
+
+.bookImg{
+  float: left;
+  margin-right: 10px
+}
