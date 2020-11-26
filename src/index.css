@@ -21,3 +21,15 @@ code {
   float: left;
   margin-right: 10px
 }
+
+.card {
+  margin-bottom: 10px;
+}
+
+h4 {
+  margin-bottom: 25px;
+}
+
+.fas {
+  margin-right: 10px;
+}
