@@ -4,13 +4,12 @@ function Book(props) {
     return (
         <div className="card bg-secondary">
             <div className="card-header">
-                <h5>Book Title</h5>
-                <h6>Author(s)</h6>
-                
+                <h5>{props.title}</h5>
+                <h6>{props.author}</h6>
             </div>
             <div className="card-body">
-                <img className="bookImg"alt="placeholder" src="https://via.placeholder.com/150" />
-                <p className="card-text">Summary</p>
+                <img className="bookImg" alt={props.title} width="150px" src={props.image} />
+                <p className="card-text">{props.summary}</p>
                 {props.children}
             </div>
         </div>

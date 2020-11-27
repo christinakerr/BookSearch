@@ -5,7 +5,7 @@ import Book from "./Book";
 import DeleteBtn from "./DeleteBtn"
 import API from "../utils/API"
 
-function Saved(){
+function Saved() {
 
     const [books, setBooks] = useState([]);
 
@@ -27,15 +27,18 @@ function Saved(){
     }
 
 
-    return(<main class="container">
+    return (<main class="container">
         <Jumbotron>
             <Header />
         </Jumbotron>
         <Jumbotron>
             <h4>Saved Books</h4>
-            <Book>
-                <DeleteBtn />
-            </Book>
+            {books.length ? (
+                books.map(book => {
+                    return(<Book key={book._id} {...book}>
+                        <DeleteBtn onClick={() => deleteBook(book._id)} />
+                    </Book>)
+                })) : (<h3>No results to display</h3>)}
         </Jumbotron>
     </main>
     )
