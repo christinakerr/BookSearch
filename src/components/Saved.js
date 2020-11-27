@@ -6,7 +6,6 @@ import DeleteBtn from "./DeleteBtn"
 import API from "../utils/API"
 
 function Saved() {
-
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
