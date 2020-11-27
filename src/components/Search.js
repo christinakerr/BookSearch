@@ -3,6 +3,7 @@ import Jumbotron from "./Jumbotron";
 import Header from "./Header";
 import Book from "./Book"
 import SaveBtn from "./SaveBtn"
+import API from "../utils/API";
 
 function Search() {
     const [books, setBooks] = useState([]);
@@ -19,8 +20,13 @@ function Search() {
 
     function handleSearch(event){
         event.preventDefault();
-        console.log(searchTerm)
-
+        API.searchBooks(searchTerm)
+            .then(res => {
+                setBooks(res.data.items)
+                console.log(res.data.items)
+                console.log(books);
+            })
+            .catch(err => console.log(err))
     }
 
 
@@ -38,8 +44,8 @@ function Search() {
         <Jumbotron>
         {books.length ? (
                 books.map(book => {
-                    return(<Book key={book._id} {...book}>
-                        <SaveBtn onClick={() => saveBook(book._id)} />
+                    return(<Book key={book.id} title={book.volumeInfo.title} author={book.volumeInfo.authors} image={book.volumeInfo.imageLinks.thumbnail} summary={book.volumeInfo.description}>
+                        <SaveBtn onClick={() => saveBook(book.id)} />
                     </Book>)
                 })) : (<h3>No results to display</h3>)}
         </Jumbotron>
