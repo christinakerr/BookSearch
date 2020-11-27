@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Jumbotron from "./Jumbotron"
 import Header from "./Header";
 import Book from "./Book";
+import DeleteBtn from "./DeleteBtn"
 import API from "../utils/API"
 
 function Saved(){
@@ -33,9 +34,8 @@ function Saved(){
         <Jumbotron>
             <h4>Saved Books</h4>
             <Book>
-                
+                <DeleteBtn />
             </Book>
-            <Book />
         </Jumbotron>
     </main>
     )

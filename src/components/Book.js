@@ -1,6 +1,6 @@
 import React from "react";
 
-function Book() {
+function Book(props) {
     return (
         <div className="card bg-secondary">
             <div className="card-header">
@@ -11,9 +11,7 @@ function Book() {
             <div className="card-body">
                 <img className="bookImg"alt="placeholder" src="https://via.placeholder.com/150" />
                 <p className="card-text">Summary</p>
-                <div className="save-btn"><button className="btn btn-primary save-btn">Save</button>
-                <button className="btn btn-primary save-btn">Delete</button></div>
-                
+                {props.children}
             </div>
         </div>
     )
