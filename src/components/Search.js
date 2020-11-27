@@ -9,8 +9,8 @@ function Search() {
     const [books, setBooks] = useState([]);
     const [searchTerm, setSearchTerm] = useState();
 
-    function saveBook(book){
-        console.log(book);
+    function saveBook(event){
+        console.log(event);
     }
 
     function handleSearchChange(event){
@@ -30,15 +30,15 @@ function Search() {
     }
 
 
-    return(<main class="container">
+    return(<main className="container">
         <Jumbotron>
             <Header />
         </Jumbotron>
         <Jumbotron>
         <h4>Search Books</h4>
-            <form class="form-inline row">
-                <input class="form-control col-11" type="search" placeholder="Search" aria-label="Search" onChange={handleSearchChange}/>
-                <button class="btn btn-primary" type="submit" onClick={handleSearch}>Search</button>
+            <form className="form-inline row">
+                <input className="form-control col-11" type="search" placeholder="Search" aria-label="Search" onChange={handleSearchChange}/>
+                <button className="btn btn-primary" type="submit" onClick={handleSearch}>Search</button>
             </form>
         </Jumbotron>
         <Jumbotron>

@@ -17,5 +17,5 @@ app.use(routes);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/booksearch");
 
 app.listen(PORT, function() {
-    console.log("Listenin on PORT " + PORT);
+    console.log("Listening on PORT " + PORT);
 })
